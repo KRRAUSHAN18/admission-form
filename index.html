@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ADMISSION FORM</title>
-
-<style>
-
+    <style>
 *{
     margin:0;
     padding:0;
@@ -22,7 +20,8 @@ body{
     padding:20px;
     background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
 }
-    .bg-video{
+
+.bg-video{
     position:fixed;
     inset:0;
     width:100%;
@@ -31,13 +30,13 @@ body{
     z-index:-1;
 }
 
-.form-container{
-    width:min(95vw,1000px);
-    padding:30px;
+    .form-container{
+    width:min(98vw,1100px);
+    max-width:1100px;
+    padding:35px;
     border-radius:24px;
     background:rgba(255,255,255,0.01);
     backdrop-filter:blur(3px);
-    -webkit-backdrop-filter:blur(3px);
     border:1px solid rgba(255,255,255,0.15);
     box-shadow:0 8px 32px rgba(0,0,0,0.3);
 }
@@ -47,6 +46,7 @@ body{
     color:white;
     margin-bottom:25px;
     letter-spacing:2px;
+    white-space:nowrap;
 }
 
 .form-row{
@@ -84,6 +84,32 @@ textarea.input-field{
     resize:none;
 }
 
+/* FILE INPUT FIX ONLY (NO DESIGN CHANGE) */
+.file-box{
+    position:relative;
+    width:100%;
+    padding:12px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.2);
+    color:white;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+
+.file-box input{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    cursor:pointer;
+}
+
+.file-box span{
+    pointer-events:none;
+}
+
+/* BUTTON ORIGINAL */
 .submit-btn{
     width:100%;
     padding:14px;
@@ -93,15 +119,22 @@ textarea.input-field{
     font-size:16px;
     font-weight:bold;
     cursor:pointer;
-    transition:.3s;
+    color:white;
+    background:linear-gradient(45deg,#3b82f6,#8b5cf6);
 }
 
 .submit-btn:hover{
-    transform:translateY(-3px);
+    transform:translateY(-5px);
+}
+
+.footer{
+    text-align:center;
+    color:rgba(255,255,255,0.8);
+    font-size:14px;
+    margin-top:20px;
 }
 
 @media(max-width:768px){
-
     .form-row{
         flex-direction:column;
         gap:15px;
@@ -110,196 +143,211 @@ textarea.input-field{
     .form-container{
         padding:20px;
     }
-
 }
-.footer{
-    text-align:center;
-    color:rgba(255,255,255,0.8);
-    font-size:14px;
-    margin-top:20px;
-}
+    
 .submit-btn{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:12px;
-    cursor:pointer;
-    font-size:16px;
-    font-weight:bold;
-    color:white;
-    background:linear-gradient(45deg,#3b82f6,#8b5cf6);
-    transition:all .4s ease;
-    position:relative;
-    overflow:hidden;
+    transition: all 0.4s ease;
 }
 
 .submit-btn:hover{
-    transform:translateY(-5px) scale(1.02);
-    box-shadow:0 0 25px rgba(59,130,246,.7);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(59,130,246,0.6);
 }
 
 .submit-btn:active{
-    transform:scale(.96);
-}
-    *{
-    -webkit-tap-highlight-color: transparent;
-}
-
-input,
-select,
-textarea,
-button{
-    outline:none;
+    transform: scale(0.97);
 }
     .raushan{
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    display:inline-block;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
     animation: glowText 3s ease-in-out infinite;
 }
 
 @keyframes glowText{
     0%{
-        opacity: 0.6;
-        transform: translateY(0);
-        text-shadow: 0 0 5px rgba(255,255,255,0.2);
+        opacity:0.6;
+        transform:translateY(0);
+        text-shadow:0 0 5px rgba(255,255,255,0.2);
     }
     50%{
-        opacity: 1;
-        transform: translateY(-3px);
+        opacity:1;
+        transform:translateY(-3px);
         text-shadow:
             0 0 10px rgba(255,255,255,0.5),
             0 0 20px rgba(255,255,255,0.3);
     }
     100%{
-        opacity: 0.6;
-        transform: translateY(0);
-        text-shadow: 0 0 5px rgba(255,255,255,0.2);
+        opacity:0.6;
+        transform:translateY(0);
+        text-shadow:0 0 5px rgba(255,255,255,0.2);
     }
 }
-.form-title{
-    text-align: center;
-    white-space: nowrap;
-    line-height: 1;
-}
-.typing-form{
-    display: inline-block;
-    position: relative;
-    top: 5px;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid currentColor;
-    width: 0;
+    .typing-form{
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+    border-right:2px solid white;
+    width:0;
+    position:relative;
+    top:5px;
     animation: typingForm 2s steps(4,end) infinite,
-               blink .8s step-end infinite;
+               blink 0.8s step-end infinite;
 }
 
 @keyframes typingForm{
-    0%{
-        width: 0;
-    }
-    50%,100%{
-        width: 5.5ch;
+    0%{ width:0; }
+    50%,100%{ width:5.5ch; }
+}
+
+@keyframes blink{
+    50%{ border-color:transparent; }
+}
+    /* mobile tap blue highlight remove */
+*{
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* input focus blue glow remove */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus{
+    outline:none;
+    box-shadow:none;
+}
+
+/* extra safety for Chrome/Safari */
+input,
+select,
+textarea,
+button{
+    -webkit-appearance:none;
+    appearance:none;
+}
+    @media (max-width: 768px){
+
+    .typing-form{
+        animation:none !important;
+        border-right:none;
+        width:auto;
+        overflow:visible;
     }
 }
-}
-</style>
+    </style>
 </head>
 <body>
-    <video autoplay muted loop class="bg-video">
+
+<video autoplay muted loop class="bg-video">
     <source src="1760165381495.mp4" type="video/mp4">
 </video>
 
 <div class="form-container">
 
     <h1 class="form-title">
-    ADMISSION <span class="typing-form">FORM</span>
-</h1>
+        ADMISSION <span class="typing-form">FORM</span>
+    </h1>
 
+    <!-- ROW 1 -->
     <div class="form-row">
-
         <div class="input-group">
             <label class="form-label">STUDENT NAME</label>
-            <input type="text" class="input-field" placeholder="Enter Student Name">
+            <input type="text" class="input-field" placeholder="ENTER STUDENT NAME">
         </div>
 
         <div class="input-group">
             <label class="form-label">FATHER NAME</label>
-            <input type="text" class="input-field" placeholder="Enter Father Name">
+            <input type="text" class="input-field" placeholder="ENTER FATHER NAME">
         </div>
-
     </div>
 
+    <!-- ROW 2 -->
     <div class="form-row">
-
         <div class="input-group">
             <label class="form-label">MOTHER NAME</label>
-            <input type="text" class="input-field" placeholder="Enter Mother Name">
+            <input type="text" class="input-field" placeholder="ENTER MOTHER NAME">
         </div>
 
         <div class="input-group">
             <label class="form-label">DATE OF BIRTH</label>
             <input type="date" class="input-field">
         </div>
-
     </div>
 
+    <!-- ROW 3 -->
     <div class="form-row">
-
         <div class="input-group">
             <label class="form-label">GENDER</label>
             <select class="input-field">
-                <option>Select Gender</option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Other</option>
+                <option>SELECT GENDER</option>
+                <option>MALE</option>
+                <option>FEMALE</option>
             </select>
         </div>
 
         <div class="input-group">
             <label class="form-label">MOBILE NUMBER</label>
-            <input type="tel" class="input-field" placeholder="Enter Mobile Number">
+            <input type="tel" class="input-field" placeholder="ENTER MOBILE NUMBER">
         </div>
-
     </div>
 
+    <!-- ROW 4 -->
     <div class="form-row">
-
         <div class="input-group">
             <label class="form-label">EMAIL ADDRESS</label>
-            <input type="email" class="input-field" placeholder="Enter Email Address">
+            <input type="email" class="input-field" placeholder="ENTER EMAIL ADDRESS">
         </div>
 
         <div class="input-group">
             <label class="form-label">COURSE</label>
             <select class="input-field">
-                <option>Select Course</option>
+                <option>SELECT COURSE</option>
                 <option>BCA</option>
                 <option>BBA</option>
                 <option>B.COM</option>
                 <option>B.SC</option>
             </select>
         </div>
-
     </div>
 
+    <!-- ROW 5 (PHOTO) -->
+    <div class="form-row">
+        <div class="input-group">
+            <label class="form-label">STUDENT PHOTO</label>
+            <div class="file-box">
+                <span id="fileText">Select Photo</span>
+                <input type="file" accept="image/*" id="fileInput">
+            </div>
+        </div>
+    </div>
+
+    <!-- ADDRESS -->
     <div class="input-group">
         <label class="form-label">ADDRESS</label>
         <textarea class="input-field" rows="3" placeholder="Enter Address"></textarea>
     </div>
 
-    <br>
+    <button class="submit-btn">SUBMIT APPLICATION</button>
 
-    <button class="submit-btn">
-        SUBMIT APPLICATION
-    </button>
     <footer class="footer">
-        <P class="raushan">RAUSHAN KUMAR MANDAL</P>
-</footer>
+        <p class="raushan">RAUSHAN KUMAR MANDAL</p>
+    </footer>
 
 </div>
 
-
 </body>
+    <script>
+const fileInput = document.getElementById("fileInput");
+const fileText = document.getElementById("fileText");
+
+fileInput.addEventListener("change", function () {
+    if (this.files.length > 0) {
+        fileText.textContent = this.files[0].name; // 👈 file name show
+    } else {
+        fileText.textContent = "Select Photo";
+    }
+});
+</script>
 </html>

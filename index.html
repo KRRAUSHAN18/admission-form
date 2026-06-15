@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ADMISSION FORM</title>
-    <style>
+
+<style>
 *{
     margin:0;
     padding:0;
@@ -30,7 +31,7 @@ body{
     z-index:-1;
 }
 
-    .form-container{
+.form-container{
     width:min(98vw,1100px);
     max-width:1100px;
     padding:35px;
@@ -84,7 +85,6 @@ textarea.input-field{
     resize:none;
 }
 
-/* FILE INPUT FIX ONLY (NO DESIGN CHANGE) */
 .file-box{
     position:relative;
     width:100%;
@@ -109,7 +109,6 @@ textarea.input-field{
     pointer-events:none;
 }
 
-/* BUTTON ORIGINAL */
 .submit-btn{
     width:100%;
     padding:14px;
@@ -121,31 +120,6 @@ textarea.input-field{
     cursor:pointer;
     color:white;
     background:linear-gradient(45deg,#3b82f6,#8b5cf6);
-}
-
-.submit-btn:hover{
-    transform:translateY(-5px);
-}
-
-.footer{
-    text-align:center;
-    color:rgba(255,255,255,0.8);
-    font-size:14px;
-    margin-top:20px;
-}
-
-@media(max-width:768px){
-    .form-row{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    .form-container{
-        padding:20px;
-    }
-}
-    
-.submit-btn{
     transition: all 0.4s ease;
 }
 
@@ -157,7 +131,15 @@ textarea.input-field{
 .submit-btn:active{
     transform: scale(0.97);
 }
-    .raushan{
+
+.footer{
+    text-align:center;
+    color:rgba(255,255,255,0.8);
+    font-size:14px;
+    margin-top:20px;
+}
+
+.raushan{
     display:inline-block;
     font-size:14px;
     font-weight:600;
@@ -167,25 +149,12 @@ textarea.input-field{
 }
 
 @keyframes glowText{
-    0%{
-        opacity:0.6;
-        transform:translateY(0);
-        text-shadow:0 0 5px rgba(255,255,255,0.2);
-    }
-    50%{
-        opacity:1;
-        transform:translateY(-3px);
-        text-shadow:
-            0 0 10px rgba(255,255,255,0.5),
-            0 0 20px rgba(255,255,255,0.3);
-    }
-    100%{
-        opacity:0.6;
-        transform:translateY(0);
-        text-shadow:0 0 5px rgba(255,255,255,0.2);
-    }
+    0%{opacity:0.6; transform:translateY(0);}
+    50%{opacity:1; transform:translateY(-3px);}
+    100%{opacity:0.6; transform:translateY(0);}
 }
-    .typing-form{
+
+.typing-form{
     display:inline-block;
     overflow:hidden;
     white-space:nowrap;
@@ -198,46 +167,33 @@ textarea.input-field{
 }
 
 @keyframes typingForm{
-    0%{ width:0; }
-    50%,100%{ width:5.5ch; }
+    0%{width:0;}
+    50%,100%{width:5.5ch;}
 }
 
 @keyframes blink{
-    50%{ border-color:transparent; }
-}
-    /* mobile tap blue highlight remove */
-*{
-    -webkit-tap-highlight-color: transparent;
+    50%{border-color:transparent;}
 }
 
-/* input focus blue glow remove */
-input:focus,
-select:focus,
-textarea:focus,
-button:focus{
-    outline:none;
-    box-shadow:none;
-}
+@media (max-width:768px){
+    .form-row{
+        flex-direction:column;
+        gap:15px;
+    }
 
-/* extra safety for Chrome/Safari */
-input,
-select,
-textarea,
-button{
-    -webkit-appearance:none;
-    appearance:none;
-}
-    @media (max-width: 768px){
+    .form-container{
+        padding:20px;
+    }
 
     .typing-form{
-        animation:none !important;
+        animation:none;
         border-right:none;
         width:auto;
-        overflow:visible;
     }
 }
-    </style>
+</style>
 </head>
+
 <body>
 
 <video autoplay muted loop class="bg-video">
@@ -246,108 +202,94 @@ button{
 
 <div class="form-container">
 
-    <h1 class="form-title">
-        ADMISSION <span class="typing-form">FORM</span>
-    </h1>
+<h1 class="form-title">
+    ADMISSION <span class="typing-form">FORM</span>
+</h1>
 
-    <!-- ROW 1 -->
-    <div class="form-row">
-        <div class="input-group">
-            <label class="form-label">STUDENT NAME</label>
-            <input type="text" class="input-field" placeholder="ENTER STUDENT NAME">
-        </div>
+<form>
 
-        <div class="input-group">
-            <label class="form-label">FATHER NAME</label>
-            <input type="text" class="input-field" placeholder="ENTER FATHER NAME">
-        </div>
-    </div>
-
-    <!-- ROW 2 -->
-    <div class="form-row">
-        <div class="input-group">
-            <label class="form-label">MOTHER NAME</label>
-            <input type="text" class="input-field" placeholder="ENTER MOTHER NAME">
-        </div>
-
-        <div class="input-group">
-            <label class="form-label">DATE OF BIRTH</label>
-            <input type="date" class="input-field">
-        </div>
-    </div>
-
-    <!-- ROW 3 -->
-    <div class="form-row">
-        <div class="input-group">
-            <label class="form-label">GENDER</label>
-            <select class="input-field">
-                <option>SELECT GENDER</option>
-                <option>MALE</option>
-                <option>FEMALE</option>
-            </select>
-        </div>
-
-        <div class="input-group">
-            <label class="form-label">MOBILE NUMBER</label>
-            <input type="tel" class="input-field" placeholder="ENTER MOBILE NUMBER">
-        </div>
-    </div>
-
-    <!-- ROW 4 -->
-    <div class="form-row">
-        <div class="input-group">
-            <label class="form-label">EMAIL ADDRESS</label>
-            <input type="email" class="input-field" placeholder="ENTER EMAIL ADDRESS">
-        </div>
-
-        <div class="input-group">
-            <label class="form-label">COURSE</label>
-            <select class="input-field">
-                <option>SELECT COURSE</option>
-                <option>BCA</option>
-                <option>BBA</option>
-                <option>B.COM</option>
-                <option>B.SC</option>
-            </select>
-        </div>
-    </div>
-
-    <!-- ROW 5 (PHOTO) -->
-    <div class="form-row">
-        <div class="input-group">
-            <label class="form-label">STUDENT PHOTO</label>
-            <div class="file-box">
-                <span id="fileText">Select Photo</span>
-                <input type="file" accept="image/*" id="fileInput">
-            </div>
-        </div>
-    </div>
-
-    <!-- ADDRESS -->
+<div class="form-row">
     <div class="input-group">
-        <label class="form-label">ADDRESS</label>
-        <textarea class="input-field" rows="3" placeholder="Enter Address"></textarea>
+        <label class="form-label">STUDENT NAME</label>
+        <input type="text" class="input-field" placeholder="ENTER STUDENT NAME" required>
     </div>
 
-    <button class="submit-btn">SUBMIT APPLICATION</button>
+    <div class="input-group">
+        <label class="form-label">FATHER NAME</label>
+        <input type="text" class="input-field" placeholder="ENTER FATHER NAME" required>
+    </div>
+</div>
 
-    <footer class="footer">
-        <p class="raushan">RAUSHAN KUMAR MANDAL</p>
-    </footer>
+<div class="form-row">
+    <div class="input-group">
+        <label class="form-label">MOTHER NAME</label>
+        <input type="text" class="input-field" placeholder="ENTER MOTHER NAME" required>
+    </div>
+
+    <div class="input-group">
+        <label class="form-label">DATE OF BIRTH</label>
+        <input type="date" class="input-field" required>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="input-group">
+        <label class="form-label">GENDER</label>
+        <select class="input-field" required>
+            <option value="">SELECT GENDER</option>
+            <option>MALE</option>
+            <option>FEMALE</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label class="form-label">MOBILE NUMBER</label>
+        <input type="tel" class="input-field" placeholder="ENTER MOBILE NUMBER" required>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="input-group">
+        <label class="form-label">EMAIL ADDRESS</label>
+        <input type="email" class="input-field" placeholder="ENTER EMAIL ADDRESS">
+    </div>
+
+    <div class="input-group">
+        <label class="form-label">COURSE</label>
+        <select class="input-field">
+            <option>SELECT COURSE</option>
+            <option>TALLY PRIME</option>
+            <option>ADCA</option>
+            <option>DFA</option>
+            <option>DCA</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="input-group">
+        <label class="form-label">STUDENT PHOTO</label>
+        <div class="file-box">
+            <span>Select Photo</span>
+            <input type="file" accept="image/*">
+        </div>
+    </div>
+</div>
+
+<div class="input-group">
+    <label class="form-label">ADDRESS</label>
+    <textarea class="input-field" rows="3" placeholder="ENTER ADDRESS"></textarea>
+</div>
+
+<button type="submit" class="submit-btn">SUBMIT APPLICATION</button>
+
+</form>
+
+<footer class="footer">
+    <p class="raushan">RAUSHAN KUMAR MANDAL</p>
+</footer>
 
 </div>
 
 </body>
-    <script>
-const fileInput = document.getElementById("fileInput");
-const fileText = document.getElementById("fileText");
-
-fileInput.addEventListener("change", function () {
-    if (this.files.length > 0) {
-        fileText.textContent = this.files[0].name; // 👈 file name show
-    } else {
-        fileText.textContent = "Select Photo";
-    }
-});
-</script>
 </html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADMISSION FORM</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+}
+    .bg-video{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
+}
+
+.form-container{
+    width:min(95vw,1000px);
+    padding:30px;
+    border-radius:24px;
+    background:rgba(255,255,255,0.01);
+    backdrop-filter:blur(3px);
+    -webkit-backdrop-filter:blur(3px);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+
+.form-title{
+    text-align:center;
+    color:white;
+    margin-bottom:25px;
+    letter-spacing:2px;
+}
+
+.form-row{
+    display:flex;
+    gap:20px;
+    margin-bottom:15px;
+}
+
+.input-group{
+    flex:1;
+}
+
+.form-label{
+    display:block;
+    color:white;
+    margin-bottom:6px;
+    font-size:14px;
+}
+
+.input-field{
+    width:100%;
+    padding:12px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:rgba(255,255,255,0.12);
+    color:white;
+}
+
+.input-field::placeholder{
+    color:rgba(255,255,255,0.7);
+}
+
+textarea.input-field{
+    resize:none;
+}
+
+.submit-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    margin-top:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    transform:translateY(-3px);
+}
+
+@media(max-width:768px){
+
+    .form-row{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .form-container{
+        padding:20px;
+    }
+
+}
+.footer{
+    text-align:center;
+    color:rgba(255,255,255,0.8);
+    font-size:14px;
+    margin-top:20px;
+}
+.submit-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    color:white;
+    background:linear-gradient(45deg,#3b82f6,#8b5cf6);
+    transition:all .4s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.submit-btn:hover{
+    transform:translateY(-5px) scale(1.02);
+    box-shadow:0 0 25px rgba(59,130,246,.7);
+}
+
+.submit-btn:active{
+    transform:scale(.96);
+}
+    *{
+    -webkit-tap-highlight-color: transparent;
+}
+
+input,
+select,
+textarea,
+button{
+    outline:none;
+}
+</style>
+</head>
+<body>
+    <video autoplay muted loop class="bg-video">
+    <source src="1760165381495.mp4" type="video/mp4">
+</video>
+
+<div class="form-container">
+
+    <h1 class="form-title">ADMISSION FORM</h1>
+
+    <div class="form-row">
+
+        <div class="input-group">
+            <label class="form-label">STUDENT NAME</label>
+            <input type="text" class="input-field" placeholder="Enter Student Name">
+        </div>
+
+        <div class="input-group">
+            <label class="form-label">FATHER NAME</label>
+            <input type="text" class="input-field" placeholder="Enter Father Name">
+        </div>
+
+    </div>
+
+    <div class="form-row">
+
+        <div class="input-group">
+            <label class="form-label">MOTHER NAME</label>
+            <input type="text" class="input-field" placeholder="Enter Mother Name">
+        </div>
+
+        <div class="input-group">
+            <label class="form-label">DATE OF BIRTH</label>
+            <input type="date" class="input-field">
+        </div>
+
+    </div>
+
+    <div class="form-row">
+
+        <div class="input-group">
+            <label class="form-label">GENDER</label>
+            <select class="input-field">
+                <option>Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label class="form-label">MOBILE NUMBER</label>
+            <input type="tel" class="input-field" placeholder="Enter Mobile Number">
+        </div>
+
+    </div>
+
+    <div class="form-row">
+
+        <div class="input-group">
+            <label class="form-label">EMAIL ADDRESS</label>
+            <input type="email" class="input-field" placeholder="Enter Email Address">
+        </div>
+
+        <div class="input-group">
+            <label class="form-label">COURSE</label>
+            <select class="input-field">
+                <option>Select Course</option>
+                <option>BCA</option>
+                <option>BBA</option>
+                <option>B.COM</option>
+                <option>B.SC</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="input-group">
+        <label class="form-label">ADDRESS</label>
+        <textarea class="input-field" rows="3" placeholder="Enter Address"></textarea>
+    </div>
+
+    <br>
+
+    <button class="submit-btn">
+        SUBMIT APPLICATION
+    </button>
+    <footer class="footer">
+    © 2026 ALL RIGHTS RESERVED | RAUSHAN KUMAR
+</footer>
+
+</div>
+
+
+</body>
+</html>
